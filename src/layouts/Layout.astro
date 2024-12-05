@@ -1,22 +1,48 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/logo-qr-generator.svg"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <title>Astro Basics</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  @font-face {
+    font-family: oufit;
+    src: url(/fonts/Outfit-VariableFont_wght.ttf);
+  }
+  html,
+  body {
+    font-family: oufit;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/bg-illustration.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    background-color: #111729;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 18px;
+  }
 </style>
