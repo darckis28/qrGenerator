@@ -1,0 +1,10 @@
+---
+const { id } = Astro.props;
+---
+
+<button
+  id={id}
+  class="flex justify-center items-center py-4 px-8 gap-2 hover:scale-105 bg-blueDesign rounded-lg"
+>
+  <slot />
+</button>

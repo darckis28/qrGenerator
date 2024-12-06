@@ -1,6 +1,7 @@
 ---
-import InputGenerator from "../components/InputGenerator.astro";
-import logo from "../assets/images/logo-qr-generator.svg";
+import BoxOne from "../components/BoxOne.astro";
+import BoxTwo from "../components/BoxTwo.astro";
+
 import Layout from "../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -8,9 +9,30 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <img
-    src={logo.src}
-    alt="logo of the page"
-  />
-  <InputGenerator />
+  <BoxOne />
+  <BoxTwo />
 </Layout>
+
+<script type="text/javascript">
+  const btn = document.getElementById("btn");
+  const boxOne = document.getElementById("boxOne");
+  const boxTwo = document.getElementById("boxTwo");
+  const search = document.getElementById("search");
+  const next = document.getElementById("next");
+
+  btn.addEventListener("click", generator);
+  next.addEventListener("click", nextQr);
+  function generator() {
+    const url = search.value;
+    if (url === "") return;
+    new QRCode(document.getElementById("qrcode"), url);
+    boxOne.classList.replace("flex", "hidden");
+    boxTwo.classList.replace("hidden", "block");
+  }
+  function nextQr() {
+    search.value = "";
+    document.getElementById("qrcode").innerHTML = "";
+    boxOne.classList.replace("hidden", "flex");
+    boxTwo.classList.replace("block", "hidden");
+  }
+</script>
